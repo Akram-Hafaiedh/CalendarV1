@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .inactive {
+        color: #d1d1d1;
+    }
+
+    .current {
+        color: #ffff;
+    }
+
+    .current::before {
+        background: #8b5cf6;
+    }
+
+    .current::before:hover {
+        background: #8b5cf6;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='/dist/output.css'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src='/src/main.js' defer></script>
+    <title>Calendar</title>
+</head>
+
+<body class="flex items-center justify-center bg-violet-500 min-h-screen">
+    <div class="w-[450px] bg-white rounded-xl">
+        <header class='flex justify-between items-center pt-6 px-8 pb-2.5'>
+            <h1 id='current-date' class='text-2xl font-bold'>July 2022</h1>
+            <div id='icons'>
+                <span id='prev'
+                    class="cursor-pointer material-symbols-rounded h-10 w-10 !leading-10 hover:bg-gray-200 mx-[1px] text-center">
+                    chevron_left
+                </span>
+                <span id='next'
+                    class="cursor-pointer material-symbols-rounded h-10 w-10 !leading-10 hover:bg-gray-200 mx-[1px] -mr-2.5 text-center">
+                    chevron_right
+                </span>
+            </div>
+        </header>
+        <div class='calendar p-5'>
+            <ul class='week flex flex-wrap text-center font-medium'>
+                <li class='w-1/7'>Sun</li>
+                <li class='w-1/7'>Mon</li>
+                <li class='w-1/7'>Tue</li>
+                <li class='w-1/7'>Wed</li>
+                <li class='w-1/7'>Thu</li>
+                <li class='w-1/7'>Fri</li>
+                <li class='w-1/7'>Sat</li>
+            </ul>
+            <ul id="days" class='flex flex-wrap text-center mb-5'>
+                <!-- <li
+                    class='inactive z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    28</li>
+                <li
+                    class='inactive z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    29</li>
+                <li
+                    class='inactive z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    30</li>
+                <li
+                    class='inactive z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    31</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    1</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    2</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    3</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    4</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    5</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    6</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    7</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    8</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    9</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    10</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    11</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    12</li>
+                <li
+                    class='z-1 !current relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    13</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    14</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    15</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    16</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    17</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    18</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    19</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    20</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    21</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    22</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    23</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    24</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    25</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    26</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    27</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    28</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    29</li>
+                <li
+                    class='z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    30</li>
+                <li
+                    class='inactive z-1 relative w-1/7 mt-[30px] cursor-pointer hover:before:bg-gray-200 before:top-1/2 before:left-1/2 before:absolute before:content-empty before:-translate-x-1/2 before:-translate-y-1/2 before:h-10 before:w-10 before:rounded-full before:-z-1'>
+                    1</li> -->
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
