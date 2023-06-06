@@ -1,7 +1,7 @@
 # Calendar V1
 
 Tech Stack used in this :
-Js - Tailwind
+\Js - Tailwind
 
 Here is a preview of the output :
 
@@ -12,5 +12,9 @@ More features will be added next
 
 ## TODO For V2
 
--Add tasks As a stacked list just to the side
--Add diffrent types of tasks : personal, professional ..
+-Do the same project with react components
+-Add a screen with diffrent months
+-Add a screen with diffrent years
+-Add Dark mode Toggle
+-Add tasks As a stacked list just to the side (MEAN-MERN)
+-Add diffrent types of tasks : personal, professional .. (MEAN-MERN)
